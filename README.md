@@ -75,6 +75,21 @@ uv run image2json analyze IMAGE_PATH \
   --max-image-side 1600
 ```
 
+**Short vs Full Analysis**:
+
+By default, the tool uses a short prompt that asks the model for only `schema_version`,
+`summary`, and `detailed_description` for faster analysis. The returned JSON still follows
+the stable output schema, with omitted analysis fields filled by defaults. Use `--full`
+for the complete detailed analysis:
+
+```bash
+# Short version (default, faster)
+uv run image2json analyze IMAGE_PATH
+
+# Full version (slower, comprehensive)
+uv run image2json analyze IMAGE_PATH --full
+```
+
 Use `--no-raw` to omit raw model output from the returned JSON.
 
 If you receive an empty analysis with `json_extraction_failed`, first verify the model can see the image directly:

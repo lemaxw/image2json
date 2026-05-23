@@ -12,6 +12,7 @@ from image2json.config import (
     DEFAULT_MAX_IMAGE_SIDE,
     DEFAULT_MODEL,
     DEFAULT_OLLAMA_URL,
+    DEFAULT_SHORT_VERSION,
     DEFAULT_TEMPERATURE,
     DEFAULT_TIMEOUT_SECONDS,
 )
@@ -44,6 +45,13 @@ def analyze(
             help="Resize the image sent to Ollama so its longest side is at most this many pixels. Use 0 to disable.",
         ),
     ] = DEFAULT_MAX_IMAGE_SIDE,
+    short_version: Annotated[
+        bool,
+        typer.Option(
+            "--short/--full",
+            help="Output only summary and detailed_description (short) or full analysis (full).",
+        ),
+    ] = DEFAULT_SHORT_VERSION,
 ) -> None:
     config = AnalysisConfig(
         model=model,
@@ -52,6 +60,7 @@ def analyze(
         timeout=timeout,
         temperature=temperature,
         max_image_side=max_image_side,
+        short_version=short_version,
     )
     try:
         analysis_result = ImageAnalyzer(config).analyze_path(image_path)

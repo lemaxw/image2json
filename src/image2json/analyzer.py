@@ -26,7 +26,7 @@ class ImageAnalyzer:
             raise FileNotFoundError(f"Image file not found: {path}")
         if not path.is_file():
             raise ValueError(f"Image path is not a file: {path}")
-        prompt = load_prompt(self.config.prompt_file)
+        prompt = load_prompt(self.config.prompt_file, self.config.short_version)
         raw_output = self.client.analyze_image(
             image_path=path,
             prompt=prompt,

@@ -178,6 +178,7 @@ Top-level fields:
 - `objects`
 - `spatial_map`
 - `dynamic_potential`
+- `soundscape`
 - `reframe_constraints`
 - `content_complexity`
 - `framing_risks`
@@ -210,6 +211,7 @@ Useful spatial fields include:
 - `reframe_constraints`: generic preserve/avoid-cutting lists, whether the source composition is panoramic/wide, whether important content spans the full width, and vertical reframe risk.
 - `content_complexity`: generic flags for dense detail, faces, hands, readable text, repeating patterns, and fine geometry.
 - `dynamic_potential`: natural motion elements, camera motion affordances, and motion risks, expressed as general physical observations.
+- `soundscape`: local ambient audio inference for short cinematic video, including a concise primary prompt, avoid list, proximity, and confidence.
 
 ## Prompt
 
@@ -340,6 +342,15 @@ The main model instruction lives in `prompts/vision_analysis.md`. It asks the mo
     "camera_motion_affordances": ["gentle push-in"],
     "motion_risks": ["face drift"],
     "notes": "No strong motion cues are visible."
+  },
+  "soundscape": {
+    "environment_type": "indoor_room",
+    "primary_audio_prompt": "soft room tone, faint object handling, quiet indoor air",
+    "secondary_sounds": [],
+    "avoid_sounds": ["traffic", "music", "strong wind"],
+    "proximity": "indoor_local",
+    "confidence": 0.68,
+    "reasoning": "The camera appears to be inside near quiet local objects."
   },
   "reframe_constraints": {
     "must_preserve": ["person", "table"],

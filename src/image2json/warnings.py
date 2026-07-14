@@ -19,6 +19,7 @@ EXPECTED_TOP_LEVEL_FIELDS = [
     "objects",
     "spatial_map",
     "dynamic_potential",
+    "soundscape",
     "reframe_constraints",
     "content_complexity",
     "framing_risks",

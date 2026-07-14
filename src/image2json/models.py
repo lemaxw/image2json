@@ -243,6 +243,21 @@ class DynamicPotential(StableModel):
     notes: str = ""
 
 
+class Soundscape(StableModel):
+    environment_type: str = ""
+    primary_audio_prompt: str = ""
+    secondary_sounds: list[str] = Field(default_factory=list)
+    avoid_sounds: list[str] = Field(default_factory=list)
+    proximity: str = ""
+    confidence: float | None = None
+    reasoning: str = ""
+
+    @field_validator("confidence", mode="before")
+    @classmethod
+    def clamp_confidence(cls, value: Any) -> float | None:
+        return _confidence(value)
+
+
 class RiskItem(StableModel):
     type: str = ""
     description: str = ""
@@ -282,6 +297,7 @@ class ImageAnalysis(StableModel):
     objects: list[ObjectItem] = Field(default_factory=list)
     spatial_map: SpatialMap = Field(default_factory=SpatialMap)
     dynamic_potential: DynamicPotential = Field(default_factory=DynamicPotential)
+    soundscape: Soundscape = Field(default_factory=Soundscape)
     reframe_constraints: ReframeConstraints = Field(default_factory=ReframeConstraints)
     content_complexity: ContentComplexity = Field(default_factory=ContentComplexity)
     framing_risks: list[RiskItem] = Field(default_factory=list)

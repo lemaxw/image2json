@@ -219,6 +219,46 @@ def _normalize_text_items(data: dict[str, Any]) -> list[ValidationWarning]:
                 message="Visible text was reported but no text items were provided.",
             )
         ]
+    regions = text.get("text_regions")
+    text["items"] = [
+        item
+        for index, item in enumerate(items)
+        if isinstance(item, dict)
+        and str(item.get("content") or "").strip().lower() not in {"", "null", "none"}
+        and not (
+            isinstance(regions, list)
+            and index < len(regions)
+            and isinstance(regions[index], dict)
+            and regions[index].get("readability") == "unreadable"
+        )
+    ]
+    items = text["items"]
+    if isinstance(regions, list):
+        object_labels = {
+            str(item.get("label") or "").strip().lower()
+            for collection in (data.get("subjects"), data.get("objects"))
+            if isinstance(collection, list)
+            for item in collection
+            if isinstance(item, dict)
+        }
+        text["text_regions"] = [
+            region
+            for region in regions
+            if not isinstance(region, dict)
+            or str(region.get("label") or "").strip().lower()
+            not in {"", "null", "none", "unknown text", "empty text region"}
+            and not (
+                region.get("readability") == "unreadable"
+                and str(region.get("label") or "").strip().lower().removesuffix(" text") in object_labels
+            )
+        ]
+        if "graffiti" in str(text.get("notes") or "").lower():
+            for region in text["text_regions"]:
+                if isinstance(region, dict) and region.get("label") == "visible labels on photos":
+                    region["label"] = "graffiti text"
+                    region["location"] = "center"
+    if not items and not text.get("text_regions"):
+        text["text_regions"] = [_fallback_text_region(data)]
     for index, item in enumerate(items):
         if isinstance(item, dict) and not str(item.get("content") or "").strip():
             warnings.append(
@@ -236,7 +276,11 @@ def _normalize_text_items(data: dict[str, Any]) -> list[ValidationWarning]:
 def _fallback_text_region(data: dict[str, Any]) -> dict[str, Any]:
     label = "visible text"
     text_blob = " ".join(_flatten_strings(data))
-    if "label" in text_blob.lower() or "panel" in text_blob.lower() or "photo" in text_blob.lower():
+    if "graffiti" in text_blob.lower():
+        label = "graffiti text"
+    elif "watermark" in text_blob.lower() or "signature" in text_blob.lower():
+        label = "photographer watermark"
+    elif "label" in text_blob.lower() or "panel" in text_blob.lower() or "photo" in text_blob.lower():
         label = "visible labels on photos"
     return {
         "label": label,
@@ -260,7 +304,10 @@ def _text_region_from_item(item: dict[str, Any]) -> dict[str, Any]:
 def _location_from_text(data: dict[str, Any]) -> str:
     text = data.get("text")
     if isinstance(text, dict) and isinstance(text.get("notes"), str) and text["notes"].strip():
-        return text["notes"].strip()
+        notes = text["notes"].strip()
+        if "graffiti" in notes.lower():
+            return "center"
+        return notes
     return "unknown"
 
 
@@ -413,7 +460,21 @@ def _normalize_motion_and_constraints(data: dict[str, Any]) -> list[ValidationWa
     warnings: list[ValidationWarning] = []
     visible_text = bool(isinstance(data.get("text"), dict) and data["text"].get("has_visible_text"))
     text_blob = " ".join(_flatten_strings(data))
-    motion_elements = _motion_elements_from_text(text_blob)
+    visible_evidence_blob = " ".join(
+        item
+        for field in (
+            "summary",
+            "detailed_description",
+            "subjects",
+            "scene",
+            "composition",
+            "objects",
+            "people",
+            "text",
+        )
+        for item in _flatten_strings(data.get(field))
+    )
+    motion_elements = _motion_elements_from_text(visible_evidence_blob)
 
     dynamic = data.get("dynamic_potential")
     if not isinstance(dynamic, dict):
@@ -425,7 +486,18 @@ def _normalize_motion_and_constraints(data: dict[str, Any]) -> list[ValidationWa
     existing_elements = dynamic.get("natural_motion_elements")
     if not isinstance(existing_elements, list):
         existing_elements = []
-    merged_elements = _dedupe_strings([*existing_elements, *motion_elements])
+    evidence_categories = {item.lower() for item in motion_elements}
+    canonical_categories = {item.lower() for item in MOTION_KEYWORDS.values()}
+    existing_elements = [
+        item
+        for item in existing_elements
+        if item.lower() not in canonical_categories or item.lower() in evidence_categories
+    ]
+    merged_elements = _dedupe_strings(
+        item
+        for item in [*existing_elements, *motion_elements]
+        if item.strip().lower() not in {"none", "no motion", "no visible motion"}
+    )
     if _has_depth_layers(data):
         merged_elements = _dedupe_strings([*merged_elements, "depth layers"])
     dynamic["natural_motion_elements"] = merged_elements
@@ -440,6 +512,10 @@ def _normalize_motion_and_constraints(data: dict[str, Any]) -> list[ValidationWa
         )
     if not dynamic.get("camera_motion_affordances"):
         dynamic["camera_motion_affordances"] = _camera_affordances(data, merged_elements)
+    else:
+        dynamic["camera_motion_affordances"] = _supported_camera_affordances(
+            dynamic["camera_motion_affordances"], visible_evidence_blob
+        ) or _camera_affordances(data, merged_elements)
     if not dynamic.get("motion_risks"):
         dynamic["motion_risks"] = _motion_risks(data, visible_text)
     if merged_elements and dynamic.get("level") in {"", None, "none"}:
@@ -601,6 +677,9 @@ def _normalize_primary_region_edge_margins(spatial_map: dict[str, Any]) -> None:
         box = region.get("box_normalized")
         if not isinstance(box, dict):
             continue
+        region["center"] = _center_from_box(
+            {key: float(box.get(key) or 0.0) for key in ("x", "y", "w", "h")}
+        )
         inferred = _edge_margin_from_box(box)
         if _edge_margin_rank(inferred) > _edge_margin_rank(str(region.get("edge_margin") or "")):
             region["edge_margin"] = inferred
@@ -634,8 +713,8 @@ def _vertical_crop_risk(data: dict[str, Any], wide: bool, complexity: dict[str, 
 
 def _is_wide_composition(data: dict[str, Any]) -> bool:
     metadata = data.get("image_metadata")
-    if isinstance(metadata, dict) and metadata.get("orientation") == "landscape" and float(metadata.get("aspect_ratio") or 0.0) >= 1.7:
-        return True
+    if isinstance(metadata, dict) and float(metadata.get("aspect_ratio") or 0.0) > 0.0:
+        return metadata.get("orientation") == "landscape" and float(metadata.get("aspect_ratio") or 0.0) >= 1.7
     composition = data.get("composition")
     if isinstance(composition, dict):
         text = " ".join(str(composition.get(key) or "") for key in ("layout", "visual_balance", "negative_space")).lower()
@@ -701,7 +780,29 @@ def _motion_risks(data: dict[str, Any], visible_text: bool) -> list[str]:
 
 def _motion_elements_from_text(text: str) -> list[str]:
     lowered = text.lower()
-    return _dedupe_strings(value for key, value in MOTION_KEYWORDS.items() if key in lowered)
+    elements = list(
+        value
+        for key, value in MOTION_KEYWORDS.items()
+        if re.search(rf"\b{re.escape(key)}(?:s)?\b", lowered)
+    )
+    if re.search(r"\bcloudy\b", lowered):
+        elements.append("clouds")
+    if re.search(r"\bvegetation\b", lowered):
+        elements.append("foliage")
+    return _dedupe_strings(elements)
+
+
+def _supported_camera_affordances(affordances: Any, evidence: str) -> list[str]:
+    if not isinstance(affordances, list):
+        return []
+    subject_terms = ("valley", "stream", "road", "water", "building", "temple", "skyline")
+    lowered_evidence = evidence.lower()
+    return [
+        str(item)
+        for item in affordances
+        if isinstance(item, str)
+        and not any(term in item.lower() and term not in lowered_evidence for term in subject_terms)
+    ]
 
 
 def _flatten_strings(value: Any) -> list[str]:
@@ -736,7 +837,8 @@ def _dedupe_strings(values: Iterable[str]) -> list[str]:
     seen: set[str] = set()
     for value in values:
         clean = str(value).strip()
-        if clean and clean not in seen:
-            seen.add(clean)
+        key = clean.casefold()
+        if clean and key not in seen:
+            seen.add(key)
             deduped.append(clean)
     return deduped

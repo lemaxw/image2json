@@ -41,6 +41,22 @@ def test_analyzer_uses_short_prompt_by_default(monkeypatch, tmp_path):
     assert analysis.summary == "ok"
 
 
+def test_analyzer_uses_documented_image_size_default(monkeypatch, tmp_path):
+    image_path = tmp_path / "sample.jpg"
+    Image.new("RGB", (4, 4), color="white").save(image_path)
+    seen: dict[str, object] = {}
+
+    class FakeClient:
+        def analyze_image(self, **kwargs):
+            seen["max_image_side"] = kwargs["max_image_side"]
+            return '{"summary": "ok"}'
+
+    analysis = ImageAnalyzer(client=FakeClient()).analyze_path(image_path)
+
+    assert seen["max_image_side"] == 1600
+    assert analysis.summary == "ok"
+
+
 def test_analyzer_can_select_full_prompt(monkeypatch, tmp_path):
     image_path = tmp_path / "sample.jpg"
     Image.new("RGB", (4, 4), color="white").save(image_path)

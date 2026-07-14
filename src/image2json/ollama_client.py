@@ -9,7 +9,7 @@ from typing import Any
 import httpx
 from PIL import Image, ImageOps
 
-from image2json.models import ImageAnalysis
+from image2json.inference_schema import MODEL_RESPONSE_SCHEMA
 
 
 class OllamaError(RuntimeError):
@@ -51,7 +51,10 @@ class OllamaVisionClient:
                 }
             ],
             "stream": False,
-            "format": ImageAnalysis.model_json_schema(),
+            # Keep inference constrained without forcing the vision model to generate
+            # every field in the stable public schema. ImageAnalysis fills omitted
+            # fields with defaults after the response is parsed.
+            "format": MODEL_RESPONSE_SCHEMA,
             "think": False,
             "options": {"temperature": temperature},
         }
@@ -81,7 +84,8 @@ class OllamaVisionClient:
                     raise OllamaError(
                         "Ollama returned an empty response. Verify this model supports vision through "
                         "/api/chat and try a direct prompt such as: "
-                        "ollama run qwen3-vl:8b /path/to/image.jpg 'describe this image'"
+                        "ollama run qwen3-vl:8b /path/to/image.jpg 'describe this image'. "
+                        "For full structured analysis, also try increasing --max-image-side to 1600 or higher."
                     )
                 return result
             except OllamaModelMissingError:

@@ -10,6 +10,8 @@ def test_image_analysis_defaults_are_stable():
     assert analysis.scene.environment == ""
     assert analysis.spatial_map.primary_regions == []
     assert analysis.dynamic_potential.natural_motion_elements == []
+    assert analysis.soundscape.primary_audio_prompt == ""
+    assert analysis.soundscape.avoid_sounds == []
     assert analysis.reframe_constraints.must_preserve == []
     assert analysis.content_complexity.dense_details is False
     assert analysis.composition.foreground == []
@@ -82,6 +84,15 @@ def test_new_signal_fields_validate():
                 "camera_motion_affordances": ["slow lateral pan"],
                 "motion_risks": [],
             },
+            "soundscape": {
+                "environment_type": "forest_open_air",
+                "primary_audio_prompt": "birds chirping, insects buzzing, leaves rustling",
+                "secondary_sounds": ["distant water"],
+                "avoid_sounds": ["traffic", "music"],
+                "proximity": "near_nature_far_city",
+                "confidence": 1.4,
+                "reasoning": "Nearby foliage dominates the camera position.",
+            },
             "reframe_constraints": {
                 "must_preserve": ["lake"],
                 "avoid_cutting": [],
@@ -94,4 +105,6 @@ def test_new_signal_fields_validate():
     assert analysis.image_metadata.orientation == "landscape"
     assert analysis.spatial_map.primary_regions[0].box_normalized.x == 0.0
     assert analysis.spatial_map.primary_regions[0].box_normalized.w == 1.0
+    assert analysis.soundscape.confidence == 1.0
+    assert analysis.soundscape.avoid_sounds == ["traffic", "music"]
     assert analysis.reframe_constraints.vertical_crop_risk == "high"

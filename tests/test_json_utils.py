@@ -161,9 +161,125 @@ def test_full_width_important_content_is_separate_from_wide_composition():
     assert analysis.reframe_constraints.full_width_important_content is True
 
 
+def test_primary_region_center_is_derived_from_model_box():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "spatial_map": {
+                    "primary_regions": [
+                        {
+                            "label": "stream",
+                            "box_normalized": {"x": 0.4, "y": 0.5, "w": 0.3, "h": 0.4},
+                            "importance": "primary",
+                            "edge_margin": "safe",
+                            "preserve_for_reframe": True,
+                        }
+                    ]
+                }
+            }
+        )
+    )
+    assert analysis.spatial_map.primary_regions[0].center.model_dump() == {"x": 0.55, "y": 0.7}
+
+
 def test_dynamic_inference_warning_message_is_clear():
     analysis = analysis_from_model_output(
         json.dumps({"composition": {"foreground": ["grass"], "midground": ["lake"], "background": ["clouds"]}})
     )
     messages = [warning.message for warning in analysis.validation_warnings if warning.field == "dynamic_potential.cues"]
     assert messages == ["Dynamic potential was inferred from composition, depth, or visible physical elements."]
+
+
+def test_avoid_sounds_do_not_create_visible_motion_elements():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "summary": "Ancient temple under clouds",
+                "soundscape": {"avoid_sounds": ["water", "traffic"]},
+            }
+        )
+    )
+    assert "clouds" in analysis.dynamic_potential.natural_motion_elements
+    assert "water" not in analysis.dynamic_potential.natural_motion_elements
+
+
+def test_source_aspect_ratio_takes_priority_for_wide_composition():
+    analysis = analysis_from_model_output(
+        json.dumps({"composition": {"layout": "wide horizontal"}}),
+        image_metadata={"width": 6000, "height": 4000, "orientation": "landscape", "aspect_ratio": 1.5},
+    )
+    assert analysis.reframe_constraints.wide_composition is False
+
+
+def test_watermark_does_not_imply_visible_water_motion():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "summary": "Ancient temple",
+                "text": {
+                    "has_visible_text": True,
+                    "items": [{"content": "Maxim Pshater"}],
+                    "text_regions": [{"label": "photographer watermark"}],
+                },
+            }
+        )
+    )
+    assert "water" not in analysis.dynamic_potential.natural_motion_elements
+
+
+def test_unsupported_model_motion_category_is_removed():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "summary": "Dry stone temple under clouds",
+                "dynamic_potential": {"natural_motion_elements": ["water", "clouds"]},
+            }
+        )
+    )
+    assert "water" not in analysis.dynamic_potential.natural_motion_elements
+    assert "clouds" in analysis.dynamic_potential.natural_motion_elements
+
+
+def test_camera_affordance_cannot_introduce_absent_scene_type():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "summary": "Ancient temple on rocky terrain",
+                "composition": {"depth": "deep"},
+                "dynamic_potential": {"camera_motion_affordances": ["gentle push into the valley"]},
+            }
+        )
+    )
+    assert "gentle push into the valley" not in analysis.dynamic_potential.camera_motion_affordances
+    assert "gentle push-in" in analysis.dynamic_potential.camera_motion_affordances
+
+
+def test_empty_and_null_text_items_are_removed():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "text": {
+                    "has_visible_text": True,
+                    "items": [{"content": ""}, {"content": "null"}, {"content": "© Author"}],
+                    "text_regions": [{"label": "empty text region"}, {"label": "watermark"}],
+                }
+            }
+        )
+    )
+    assert [item.content for item in analysis.text.items] == ["© Author"]
+    assert [region.label for region in analysis.text.text_regions] == ["watermark"]
+
+
+def test_unreadable_region_cannot_have_invented_ocr_content():
+    analysis = analysis_from_model_output(
+        json.dumps(
+            {
+                "text": {
+                    "has_visible_text": True,
+                    "items": [{"content": "Scaffolding"}],
+                    "text_regions": [{"label": "possible marks", "readability": "unreadable"}],
+                }
+            }
+        )
+    )
+    assert analysis.text.items == []

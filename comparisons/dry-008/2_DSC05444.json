@@ -1,0 +1,399 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "Central mannequin with textured top and black skirt.",
+        "importance": "high",
+        "label": "mannequin in center",
+        "reason": "Central position and detailed clothing make it a focal point.",
+        "region": "0.35, 0.0, 0.59, 0.99"
+      },
+      {
+        "confidence": 0.9,
+        "description": "Mannequin with fur-like texture on right edge.",
+        "importance": "medium",
+        "label": "mannequin on right",
+        "reason": "Visible texture and edge placement.",
+        "region": "0.61, 0.0, 1.0, 0.99"
+      },
+      {
+        "confidence": 0.9,
+        "description": "Mannequin with patterned top on left edge.",
+        "importance": "medium",
+        "label": "mannequin on left",
+        "reason": "Visible pattern and edge placement.",
+        "region": "0.0, 0.0, 0.15, 0.99"
+      }
+    ],
+    "background": [
+      "dark wall"
+    ],
+    "camera_angle": null,
+    "depth": "shallow",
+    "edge_content": [
+      "mannequins on left and right edges"
+    ],
+    "focal_points": [
+      "mannequin in center"
+    ],
+    "foreground": [
+      "mannequin in center"
+    ],
+    "layout": "linear",
+    "midground": [
+      "mannequins extending left"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "symmetrical"
+  },
+  "confidence": {
+    "notes": "High confidence in static scene description.",
+    "overall": 0.95
+  },
+  "content_complexity": {
+    "dense_details": true,
+    "faces": false,
+    "fine_geometry": true,
+    "hands": false,
+    "level": "medium",
+    "readable_text": true,
+    "repeating_patterns": true
+  },
+  "detailed_description": "The image shows a line of mannequins wearing various dark-toned garments with textured fabrics, including fur-like and patterned designs. The scene is illuminated by warm lighting, creating long shadows on the floor. The background is dark, emphasizing the mannequins and their attire. The composition is linear, with mannequins extending from the left to right edge of the frame.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "none"
+    ],
+    "cues": [
+      "static mannequins",
+      "stationary lighting"
+    ],
+    "level": "low",
+    "motion_risks": [
+      "none"
+    ],
+    "natural_motion_elements": [
+      "fabric",
+      "depth layers"
+    ],
+    "notes": "No visible motion elements; scene is static."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.95,
+      "description": "Truncating mannequins on left or right edge would remove key elements.",
+      "severity": "high",
+      "type": "cropping"
+    },
+    {
+      "confidence": 0.85,
+      "description": "Mannequins in foreground may obscure background details.",
+      "severity": "medium",
+      "type": "occlusion"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.9,
+      "description": "Mannequins and clothing are static, but could appear to move in video.",
+      "severity": "medium",
+      "type": "static elements"
+    },
+    {
+      "confidence": 0.85,
+      "description": "Watermark may flicker or distort in video.",
+      "severity": "low",
+      "type": "text stability"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.2092,
+    "height": 3155,
+    "orientation": "landscape",
+    "width": 3815
+  },
+  "objects": [
+    {
+      "confidence": 0.95,
+      "description": "Headless mannequin with articulated limbs.",
+      "label": "mannequin",
+      "location": null,
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": null,
+        "notes": "Mannequins are the primary objects, arranged in a row.",
+        "occluded": null,
+        "region": "0.0, 0.0, 1.0, 0.99",
+        "relative_size": "multiple, uniform scale",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Dark, textured garments.",
+      "label": "clothing",
+      "location": null,
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": null,
+        "notes": "Clothing is displayed on mannequins.",
+        "occluded": null,
+        "region": "0.0, 0.0, 1.0, 0.99",
+        "relative_size": "multiple, uniform scale",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Warm lighting source.",
+      "label": "lighting fixture",
+      "location": null,
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": null,
+        "notes": "Lighting is implied but not directly visible.",
+        "occluded": null,
+        "region": "0.0, 0.0, 0.01, 0.01",
+        "relative_size": "small",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "people": [],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "mannequin row",
+      "floor",
+      "background wall"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "mannequin row",
+      "floor",
+      "background wall"
+    ],
+    "reason": "Mannequins and floor are distributed across width; cutting would truncate key elements.",
+    "vertical_crop_risk": "high",
+    "wide_composition": false
+  },
+  "scene": {
+    "environment": "indoor",
+    "location_type": "retail space",
+    "mood": "dramatic, sophisticated",
+    "time_of_day": "evening",
+    "weather": null
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "none"
+    ],
+    "confidence": 0.9,
+    "environment_type": "indoor",
+    "primary_audio_prompt": "quiet, ambient display space",
+    "proximity": "nearby",
+    "reasoning": "No visible sound sources; quiet retail space.",
+    "secondary_sounds": [
+      "none"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "full_width",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.99,
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.5,
+          "y": 0.495
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "mannequin row",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.49,
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.5
+        },
+        "center": {
+          "x": 0.5,
+          "y": 0.745
+        },
+        "edge_margin": "touching_edge",
+        "importance": "supporting",
+        "label": "floor",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.99,
+          "w": 0.3,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.15,
+          "y": 0.495
+        },
+        "edge_margin": "touching_edge",
+        "importance": "background",
+        "label": "background wall",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "dark tones",
+      "warm lighting"
+    ],
+    "lighting": "warm, directional",
+    "medium": "photography",
+    "visual_style": "studio lighting, fashion display"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "A series of headless mannequins displaying dark, textured clothing.",
+      "label": "mannequin",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "foreground to midground",
+        "notes": "Mannequins are the primary subjects, arranged in a row with consistent spacing.",
+        "occluded": null,
+        "region": "0.0, 0.0, 1.0, 0.99",
+        "relative_size": "multiple, uniform scale",
+        "touches_edges": [
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Dark, textured garments including fur-like and patterned fabrics.",
+      "label": "clothing",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "foreground to midground",
+        "notes": "Clothing is displayed on mannequins, with varied textures and patterns visible.",
+        "occluded": null,
+        "region": "0.0, 0.0, 1.0, 0.99",
+        "relative_size": "multiple, uniform scale",
+        "touches_edges": [
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Warm, directional lighting casting long shadows.",
+      "label": "lighting",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": "background",
+        "notes": "Lighting creates a dramatic effect with shadows on the floor.",
+        "occluded": null,
+        "region": "0.0, 0.0, 1.0, 0.99",
+        "relative_size": "uniform",
+        "touches_edges": [
+          "none"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Dark, reflective floor with visible shadows.",
+      "label": "floor",
+      "prominence": "low",
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": "foreground",
+        "notes": "Floor is visible at the bottom of the frame, reflecting light.",
+        "occluded": null,
+        "region": "0.0, 0.5, 1.0, 0.99",
+        "relative_size": "wide",
+        "touches_edges": [
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "A row of mannequins displays dark, textured clothing in a dimly lit indoor setting.",
+  "text": {
+    "has_visible_text": true,
+    "items": [
+      {
+        "confidence": 0.95,
+        "content": "\u00a9 Maxim Pshater",
+        "location": "0.0, 0.99, 0.11, 0.99",
+        "spatial": {
+          "confidence": null,
+          "distance_layer": null,
+          "notes": "",
+          "occluded": null,
+          "region": "",
+          "relative_size": null,
+          "touches_edges": [],
+          "x_position": null,
+          "y_position": null
+        }
+      }
+    ],
+    "notes": "Watermark is visible at bottom left corner.",
+    "text_regions": [
+      {
+        "box_normalized": null,
+        "label": "photographer watermark",
+        "location": "0.0, 0.99, 0.11, 0.99",
+        "preserve_for_reframe": true,
+        "readability": "partial"
+      }
+    ]
+  },
+  "uncertainties": [
+    "no visible motion",
+    "no sound sources"
+  ],
+  "validation_warnings": [],
+  "visual_quality": {
+    "artifacts": [
+      "none"
+    ],
+    "confidence": 0.95,
+    "exposure": "balanced",
+    "noise": "low",
+    "overall": "high",
+    "sharpness": "high"
+  }
+}

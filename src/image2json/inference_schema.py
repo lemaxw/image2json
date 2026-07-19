@@ -3,6 +3,17 @@ from __future__ import annotations
 from typing import Any
 
 
+SHORT_MODEL_RESPONSE_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "schema_version": {"type": "string"},
+        "summary": {"type": "string"},
+        "detailed_description": {"type": "string"},
+    },
+    "required": ["schema_version", "summary", "detailed_description"],
+}
+
+
 def _array(item_type: str = "string") -> dict[str, Any]:
     return {"type": "array", "items": {"type": item_type}}
 

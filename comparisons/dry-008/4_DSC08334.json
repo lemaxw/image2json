@@ -1,0 +1,391 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "Dense cluster of high-rise buildings including glass and concrete structures, with construction cranes on some towers.",
+        "importance": "high",
+        "label": "city skyline",
+        "reason": "Primary subject of the image.",
+        "region": "background"
+      },
+      {
+        "confidence": 0.95,
+        "description": "Wooden beam and metal supports forming a frame in the foreground.",
+        "importance": "high",
+        "label": "structural elements",
+        "reason": "Framing device for the skyline.",
+        "region": "foreground"
+      },
+      {
+        "confidence": 0.9,
+        "description": "Dense green foliage forming a midground layer between the foreground structure and the skyline.",
+        "importance": "medium",
+        "label": "trees",
+        "reason": "Provides contrast and depth.",
+        "region": "midground"
+      }
+    ],
+    "background": [
+      "city skyline"
+    ],
+    "camera_angle": null,
+    "depth": "medium",
+    "edge_content": [
+      "structural elements on left and right edges"
+    ],
+    "focal_points": [
+      "city skyline"
+    ],
+    "foreground": [
+      "structural elements"
+    ],
+    "layout": "framed",
+    "midground": [
+      "trees"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "symmetrical"
+  },
+  "confidence": {
+    "notes": "High confidence in visible elements, but some text is unreadable.",
+    "overall": 0.9
+  },
+  "content_complexity": {
+    "dense_details": true,
+    "faces": false,
+    "fine_geometry": true,
+    "hands": false,
+    "level": "medium",
+    "readable_text": true,
+    "repeating_patterns": false
+  },
+  "detailed_description": "The image shows a city skyline with numerous high-rise buildings under a cloudy sky, framed by a wooden beam and metal supports in the foreground. Below the skyline, a dense layer of green trees fills the midground. The composition includes a mix of modern glass towers and older concrete structures, with construction cranes visible on some buildings. The foreground features structural elements of a building or bridge.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "gentle push into the skyline"
+    ],
+    "cues": [
+      "clouds",
+      "foliage"
+    ],
+    "level": "low",
+    "motion_risks": [
+      "unstable foliage",
+      "static architecture"
+    ],
+    "natural_motion_elements": [
+      "foliage",
+      "depth layers",
+      "clouds"
+    ],
+    "notes": "Clouds and foliage show minimal motion."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.9,
+      "description": "Cutting off structural elements on left and right edges would remove framing context.",
+      "severity": "medium",
+      "type": "cropping"
+    },
+    {
+      "confidence": 0.85,
+      "description": "Trees in the midground may obscure parts of the skyline if cropped.",
+      "severity": "low",
+      "type": "occlusion"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.85,
+      "description": "Trees in the midground may appear to sway in video generation.",
+      "severity": "medium",
+      "type": "unstable foliage"
+    },
+    {
+      "confidence": 0.85,
+      "description": "Buildings in the skyline may appear unnaturally still in motion.",
+      "severity": "low",
+      "type": "static architecture"
+    },
+    {
+      "confidence": 0.85,
+      "description": "Metal structural elements may flicker in video generation.",
+      "severity": "low",
+      "type": "fine-detail flicker"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.2737,
+    "height": 4000,
+    "orientation": "landscape",
+    "width": 5095
+  },
+  "objects": [
+    {
+      "confidence": 0.85,
+      "description": "Two cranes visible on top of a building in the skyline.",
+      "label": "construction cranes",
+      "location": null,
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "small",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Multiple high-rise buildings with glass facades in the skyline.",
+      "label": "glass towers",
+      "location": null,
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "medium",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Several mid-rise buildings with concrete exteriors in the skyline.",
+      "label": "concrete buildings",
+      "location": null,
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "medium",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "people": [],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "structural elements on left and right edges"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "city skyline",
+      "structural elements",
+      "trees"
+    ],
+    "reason": "Preserving the framed view of the skyline and structural elements is essential.",
+    "vertical_crop_risk": "high",
+    "wide_composition": false
+  },
+  "scene": {
+    "environment": "urban",
+    "location_type": "city",
+    "mood": "calm",
+    "time_of_day": "day",
+    "weather": "cloudy"
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "wind",
+      "birds"
+    ],
+    "confidence": 0.85,
+    "environment_type": "urban",
+    "primary_audio_prompt": "distant city traffic",
+    "proximity": "nearby",
+    "reasoning": "City traffic is audible at the camera position.",
+    "secondary_sounds": [
+      "distant construction noise"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "wide",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.45,
+          "w": 0.92,
+          "x": 0.08,
+          "y": 0.35
+        },
+        "center": {
+          "x": 0.54,
+          "y": 0.575
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "city skyline",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.35,
+          "w": 0.99,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.495,
+          "y": 0.175
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "structural elements",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.25,
+          "w": 0.92,
+          "x": 0.08,
+          "y": 0.7
+        },
+        "center": {
+          "x": 0.54,
+          "y": 0.825
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "trees",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "gray",
+      "green",
+      "blue",
+      "brown"
+    ],
+    "lighting": "diffused",
+    "medium": "photograph",
+    "visual_style": "realistic"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "Dense cluster of high-rise buildings including glass and concrete structures, with construction cranes on some towers.",
+      "label": "city skyline",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "background",
+        "notes": "Buildings are visible through a wooden beam and metal structure.",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "large",
+        "touches_edges": [
+          "top",
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Dense green foliage forming a midground layer between the foreground structure and the skyline.",
+      "label": "trees",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": "midground",
+        "notes": "Trees are visible below the skyline and above the foreground structure.",
+        "occluded": null,
+        "region": "midground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Wooden beam and metal supports forming a frame in the foreground.",
+      "label": "structural elements",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "foreground",
+        "notes": "The wooden beam spans horizontally across the top of the image.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "top",
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "Urban skyline viewed through a wooden and metal structure with trees in the foreground.",
+  "text": {
+    "has_visible_text": true,
+    "items": [
+      {
+        "confidence": 0.95,
+        "content": "Maxim PSHATER",
+        "location": "bottom left",
+        "spatial": {
+          "confidence": null,
+          "distance_layer": null,
+          "notes": "",
+          "occluded": null,
+          "region": "",
+          "relative_size": null,
+          "touches_edges": [],
+          "x_position": null,
+          "y_position": null
+        }
+      }
+    ],
+    "notes": "Watermark is visible in the bottom left corner.",
+    "text_regions": [
+      {
+        "box_normalized": null,
+        "label": "photographer watermark",
+        "location": "bottom left",
+        "preserve_for_reframe": true,
+        "readability": "partial"
+      }
+    ]
+  },
+  "uncertainties": [
+    "clouds",
+    "foliage motion"
+  ],
+  "validation_warnings": [],
+  "visual_quality": {
+    "artifacts": [
+      "none"
+    ],
+    "confidence": 0.95,
+    "exposure": "balanced",
+    "noise": "low",
+    "overall": "high",
+    "sharpness": "high"
+  }
+}

@@ -38,6 +38,7 @@ class OllamaVisionClient:
         model: str,
         temperature: float,
         max_image_side: int = 1600,
+        response_schema: dict[str, Any] | None = None,
     ) -> str:
         image_bytes = _image_bytes_for_ollama(image_path, max_image_side=max_image_side)
         image_b64 = base64.b64encode(image_bytes).decode("ascii")
@@ -54,7 +55,7 @@ class OllamaVisionClient:
             # Keep inference constrained without forcing the vision model to generate
             # every field in the stable public schema. ImageAnalysis fills omitted
             # fields with defaults after the response is parsed.
-            "format": MODEL_RESPONSE_SCHEMA,
+            "format": response_schema or MODEL_RESPONSE_SCHEMA,
             "think": False,
             "options": {"temperature": temperature},
         }

@@ -1,0 +1,483 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "Winding dirt road",
+        "importance": "high",
+        "label": "road",
+        "reason": "Central visual element leading the eye into the distance.",
+        "region": "midground"
+      },
+      {
+        "confidence": 0.85,
+        "description": "Vehicle and tent cluster",
+        "importance": "medium",
+        "label": "campsite",
+        "reason": "Provides context and scale to the landscape.",
+        "region": "lower left"
+      },
+      {
+        "confidence": 0.9,
+        "description": "Foreground boulders",
+        "importance": "medium",
+        "label": "rocky terrain",
+        "reason": "Adds texture and foreground interest.",
+        "region": "lower portion"
+      }
+    ],
+    "background": [
+      "distant hills",
+      "sky"
+    ],
+    "camera_angle": null,
+    "depth": "deep",
+    "edge_content": [
+      "left edge: campsite",
+      "right edge: road"
+    ],
+    "focal_points": [
+      "road",
+      "campsite"
+    ],
+    "foreground": [
+      "rocky terrain"
+    ],
+    "layout": "landscape",
+    "midground": [
+      "road",
+      "desert hills"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "asymmetrical"
+  },
+  "confidence": {
+    "notes": "High confidence in landscape elements and text detection.",
+    "overall": 0.9
+  },
+  "content_complexity": {
+    "dense_details": false,
+    "faces": false,
+    "fine_geometry": false,
+    "hands": false,
+    "level": "medium",
+    "readable_text": true,
+    "repeating_patterns": false
+  },
+  "detailed_description": "The image shows a desert terrain with a winding road stretching into the distance, flanked by arid hills. In the lower left, a campsite with vehicles and tents is visible. The sky is clear with scattered clouds. The foreground features rocky terrain with scattered boulders.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "gentle push along the road"
+    ],
+    "cues": [
+      "clouds",
+      "road"
+    ],
+    "level": "low",
+    "motion_risks": [
+      "static terrain",
+      "no moving elements"
+    ],
+    "natural_motion_elements": [
+      "clouds",
+      "vehicles",
+      "depth layers",
+      "foliage"
+    ],
+    "notes": "Clouds provide minimal motion cues; road is static."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.95,
+      "description": "No critical content near edges",
+      "severity": "low",
+      "type": "cropping"
+    },
+    {
+      "confidence": 0.95,
+      "description": "No occlusion of important elements",
+      "severity": "low",
+      "type": "occlusion"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.95,
+      "description": "No moving elements in static landscape",
+      "severity": "low",
+      "type": "static terrain"
+    },
+    {
+      "confidence": 0.95,
+      "description": "No natural motion to animate",
+      "severity": "low",
+      "type": "unwanted motion"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.5,
+    "height": 4000,
+    "orientation": "landscape",
+    "width": 6000
+  },
+  "objects": [
+    {
+      "confidence": 0.85,
+      "description": "Cars and trucks at campsite",
+      "label": "vehicles",
+      "location": null,
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "lower left",
+        "relative_size": "small",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Camping tents",
+      "label": "tents",
+      "location": null,
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "lower left",
+        "relative_size": "small",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Rock formations",
+      "label": "boulders",
+      "location": null,
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "small",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "people": [],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "road",
+      "campsite",
+      "rocky terrain"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "road",
+      "campsite",
+      "rocky terrain"
+    ],
+    "reason": "Road and campsite are centrally positioned with sufficient margin on both sides.",
+    "vertical_crop_risk": "high",
+    "wide_composition": false
+  },
+  "scene": {
+    "environment": "desert",
+    "location_type": "open landscape",
+    "mood": "serene",
+    "time_of_day": "daytime",
+    "weather": "clear"
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "water",
+      "animals"
+    ],
+    "confidence": 0.85,
+    "environment_type": "desert",
+    "primary_audio_prompt": "Distant wind and vehicle sounds",
+    "proximity": "nearby sources dominate",
+    "reasoning": "No visible water or animals; wind and vehicles are plausible in desert campsite.",
+    "secondary_sounds": [
+      "distant wind",
+      "vehicle sounds"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "wide",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.08,
+          "w": 0.75,
+          "x": 0.22,
+          "y": 0.38
+        },
+        "center": {
+          "x": 0.595,
+          "y": 0.42
+        },
+        "edge_margin": "near_edge",
+        "importance": "primary",
+        "label": "road",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.05,
+          "w": 0.15,
+          "x": 0.02,
+          "y": 0.65
+        },
+        "center": {
+          "x": 0.095,
+          "y": 0.675
+        },
+        "edge_margin": "near_edge",
+        "importance": "primary",
+        "label": "campsite",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.25,
+          "w": 0.35,
+          "x": 0.01,
+          "y": 0.75
+        },
+        "center": {
+          "x": 0.185,
+          "y": 0.875
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "rocky terrain",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.05,
+          "w": 0.99,
+          "x": 0.01,
+          "y": 0.38
+        },
+        "center": {
+          "x": 0.505,
+          "y": 0.405
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "distant hills",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.35,
+          "w": 0.99,
+          "x": 0.01,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.505,
+          "y": 0.175
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "sky",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "tan",
+      "blue",
+      "white"
+    ],
+    "lighting": "bright sunlight",
+    "medium": "photograph",
+    "visual_style": "realistic"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "Winding dirt road",
+      "label": "road",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "mid",
+        "notes": "Curves through the desert hills, visible from foreground to background.",
+        "occluded": null,
+        "region": "midground",
+        "relative_size": "long",
+        "touches_edges": [
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Vehicle and tent cluster",
+      "label": "campsite",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": "near",
+        "notes": "Located in the lower left corner, near the rocky terrain.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "small",
+        "touches_edges": [
+          "left"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Arid hills and rocky terrain",
+      "label": "desert landscape",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": "far",
+        "notes": "Extends across the entire image, with gentle slopes and sparse vegetation.",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "large",
+        "touches_edges": [
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Clear blue sky with scattered clouds",
+      "label": "sky",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "far",
+        "notes": "Occupies the upper portion of the image, with clouds visible in the distance.",
+        "occluded": null,
+        "region": "upper",
+        "relative_size": "wide",
+        "touches_edges": [
+          "top"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Foreground boulders and gravel",
+      "label": "rocky terrain",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": "near",
+        "notes": "Scattered boulders and gravel in the lower portion of the image.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "small",
+        "touches_edges": [
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "A winding road cuts through a vast desert landscape under a clear blue sky, with a campsite visible in the lower left.",
+  "text": {
+    "has_visible_text": true,
+    "items": [
+      {
+        "confidence": 0.95,
+        "content": "Maxim Pshater",
+        "location": "bottom left",
+        "spatial": {
+          "confidence": null,
+          "distance_layer": null,
+          "notes": "",
+          "occluded": null,
+          "region": "",
+          "relative_size": null,
+          "touches_edges": [],
+          "x_position": null,
+          "y_position": null
+        }
+      },
+      {
+        "confidence": 0.95,
+        "content": "\u00a9",
+        "location": "bottom left",
+        "spatial": {
+          "confidence": null,
+          "distance_layer": null,
+          "notes": "",
+          "occluded": null,
+          "region": "",
+          "relative_size": null,
+          "touches_edges": [],
+          "x_position": null,
+          "y_position": null
+        }
+      }
+    ],
+    "notes": "Watermark visible in bottom left corner.",
+    "text_regions": [
+      {
+        "box_normalized": null,
+        "label": "watermark",
+        "location": "bottom left",
+        "preserve_for_reframe": true,
+        "readability": "partial"
+      },
+      {
+        "box_normalized": null,
+        "label": "copyright_symbol",
+        "location": "bottom left",
+        "preserve_for_reframe": true,
+        "readability": "partial"
+      }
+    ]
+  },
+  "uncertainties": [
+    "no people visible",
+    "no animals visible",
+    "no water visible"
+  ],
+  "validation_warnings": [],
+  "visual_quality": {
+    "artifacts": [
+      "none"
+    ],
+    "confidence": 0.95,
+    "exposure": "well-exposed",
+    "noise": "low",
+    "overall": "high",
+    "sharpness": "high"
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "Central focal point with flowing water",
+        "importance": "high",
+        "label": "stream",
+        "reason": "Dynamic water flow draws immediate attention",
+        "region": "midground"
+      },
+      {
+        "confidence": 0.85,
+        "description": "Distinctive white blooms in left midground",
+        "importance": "medium",
+        "label": "flowering_shrub",
+        "reason": "Contrasts with surrounding greenery",
+        "region": "midground"
+      },
+      {
+        "confidence": 0.9,
+        "description": "Green slopes extending to background",
+        "importance": "medium",
+        "label": "hillsides",
+        "reason": "Provides context for valley setting",
+        "region": "background"
+      }
+    ],
+    "background": [
+      "hillsides",
+      "clouds"
+    ],
+    "camera_angle": null,
+    "depth": "deep",
+    "edge_content": [
+      "left: dense vegetation",
+      "right: hillsides"
+    ],
+    "focal_points": [
+      "stream",
+      "flowering_shrub"
+    ],
+    "foreground": [
+      "dense vegetation"
+    ],
+    "layout": "balanced",
+    "midground": [
+      "stream",
+      "flowering_shrub"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "symmetrical"
+  },
+  "confidence": {
+    "notes": "High confidence in visible elements based on image evidence.",
+    "overall": 0.9
+  },
+  "content_complexity": {
+    "dense_details": true,
+    "faces": false,
+    "fine_geometry": false,
+    "hands": false,
+    "level": "medium",
+    "readable_text": false,
+    "repeating_patterns": false
+  },
+  "detailed_description": "The image shows a vibrant mountain valley with a small stream flowing over rocks in the midground. Lush green hillsides rise on both sides, dotted with trees, flowering shrubs, and yellow wildflowers. A prominent flowering shrub with white blooms is visible in the left midground. The sky is overcast with thick clouds, and distant mountains are partially obscured by mist. The foreground is dense with tall grasses and plants.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "gentle push into the valley",
+      "slow pan following the stream"
+    ],
+    "cues": [
+      "flowing water",
+      "clouds",
+      "mist"
+    ],
+    "level": "medium",
+    "motion_risks": [
+      "unstable foliage",
+      "distorted water",
+      "changing light"
+    ],
+    "natural_motion_elements": [
+      "water",
+      "clouds",
+      "mist",
+      "foliage",
+      "depth layers"
+    ],
+    "notes": "Visible water flow and clouds suggest potential motion."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.85,
+      "description": "Truncating hillsides would remove valley context",
+      "severity": "medium",
+      "type": "cropping"
+    },
+    {
+      "confidence": 0.75,
+      "description": "Foreground vegetation may obscure stream details",
+      "severity": "low",
+      "type": "occlusion"
+    },
+    {
+      "confidence": 0.9,
+      "description": "Edge content includes hillsides and vegetation",
+      "severity": "medium",
+      "type": "boundaries"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.8,
+      "description": "Tall grasses and plants may flicker in video",
+      "severity": "medium",
+      "type": "unstable_foliage"
+    },
+    {
+      "confidence": 0.75,
+      "description": "Rapid water flow may appear unnatural in motion",
+      "severity": "medium",
+      "type": "distorted_water"
+    },
+    {
+      "confidence": 0.7,
+      "description": "Cloud cover may cause inconsistent lighting",
+      "severity": "low",
+      "type": "changing_light"
+    },
+    {
+      "confidence": 0.65,
+      "description": "Static terrain may appear to move unnaturally",
+      "severity": "low",
+      "type": "unwanted_motion"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.3333,
+    "height": 1536,
+    "orientation": "landscape",
+    "width": 2048
+  },
+  "objects": [],
+  "people": [],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "stream",
+      "flowering_shrub"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "valley_center",
+      "left_hillside",
+      "right_hillside",
+      "stream_path",
+      "cloud_layer"
+    ],
+    "reason": "Preserving valley context requires keeping both hillsides and stream path.",
+    "vertical_crop_risk": "high",
+    "wide_composition": false
+  },
+  "scene": {
+    "environment": "natural landscape",
+    "location_type": "mountain valley",
+    "mood": "serene",
+    "time_of_day": "day",
+    "weather": "cloudy"
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "birds",
+      "animals"
+    ],
+    "confidence": 0.9,
+    "environment_type": "natural",
+    "primary_audio_prompt": "rushing water over rocks",
+    "proximity": "nearby",
+    "reasoning": "Water flow is prominent and audible at camera position.",
+    "secondary_sounds": [
+      "rustling grasses",
+      "distant wind"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "wide",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.65,
+          "w": 0.5,
+          "x": 0.25,
+          "y": 0.35
+        },
+        "center": {
+          "x": 0.5,
+          "y": 0.675
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "valley_center",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.8,
+          "w": 0.2,
+          "x": 0.0,
+          "y": 0.1
+        },
+        "center": {
+          "x": 0.1,
+          "y": 0.5
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "left_hillside",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.8,
+          "w": 0.3,
+          "x": 0.7,
+          "y": 0.1
+        },
+        "center": {
+          "x": 0.85,
+          "y": 0.5
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "right_hillside",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.4,
+          "w": 0.3,
+          "x": 0.4,
+          "y": 0.55
+        },
+        "center": {
+          "x": 0.55,
+          "y": 0.75
+        },
+        "edge_margin": "near_edge",
+        "importance": "primary",
+        "label": "stream_path",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.3,
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.5,
+          "y": 0.15
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "cloud_layer",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "green",
+      "white",
+      "gray"
+    ],
+    "lighting": "diffused",
+    "medium": "photorealistic",
+    "visual_style": "naturalistic"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "A small stream flowing over rocks in the midground",
+      "label": "stream",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "mid",
+        "notes": "Visible water movement suggests flowing water.",
+        "occluded": null,
+        "region": "midground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Green hillsides with scattered trees and wildflowers",
+      "label": "hillsides",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": "background",
+        "notes": "Hillsides extend across the background with varying vegetation density.",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "large",
+        "touches_edges": [
+          "top",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "A dense shrub with white flowers in the left midground",
+      "label": "flowering_shrub",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": "mid",
+        "notes": "Distinctive white blooms contrast with surrounding greenery.",
+        "occluded": null,
+        "region": "midground",
+        "relative_size": "small",
+        "touches_edges": [
+          "left"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Overcast sky with thick clouds",
+      "label": "clouds",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "background",
+        "notes": "Clouds cover most of the sky, creating a muted light.",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "large",
+        "touches_edges": [
+          "top"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Dense greenery including grasses, trees, and wildflowers",
+      "label": "vegetation",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": "foreground",
+        "notes": "Foreground is dominated by tall grasses and plants.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "large",
+        "touches_edges": [
+          "left",
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "A lush green valley with a flowing stream, surrounded by hills and dense vegetation under a cloudy sky.",
+  "text": {
+    "has_visible_text": false,
+    "items": [],
+    "notes": "No visible text or markings in the image.",
+    "text_regions": []
+  },
+  "uncertainties": [
+    "cloud formation details",
+    "exact vegetation types"
+  ],
+  "validation_warnings": [],
+  "visual_quality": {
+    "artifacts": [],
+    "confidence": 0.95,
+    "exposure": "balanced",
+    "noise": "low",
+    "overall": "high",
+    "sharpness": "high"
+  }
+}

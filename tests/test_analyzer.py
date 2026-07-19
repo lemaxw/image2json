@@ -3,6 +3,7 @@ from PIL import Image
 from image2json.analyzer import ImageAnalyzer
 from image2json.analyzer import _read_image_metadata
 from image2json.config import AnalysisConfig
+from image2json.inference_schema import MODEL_RESPONSE_SCHEMA, SHORT_MODEL_RESPONSE_SCHEMA
 
 
 def test_read_image_metadata(tmp_path):
@@ -31,13 +32,18 @@ def test_analyzer_uses_short_prompt_by_default(monkeypatch, tmp_path):
     class FakeClient:
         def analyze_image(self, **kwargs):
             seen["prompt"] = kwargs["prompt"]
+            seen["response_schema"] = kwargs["response_schema"]
             return '{"summary": "ok", "detailed_description": "details"}'
 
     monkeypatch.setattr("image2json.analyzer.load_prompt", fake_load_prompt)
 
     analysis = ImageAnalyzer(client=FakeClient()).analyze_path(image_path)
 
-    assert seen == {"short_version": True, "prompt": "prompt"}
+    assert seen == {
+        "short_version": True,
+        "prompt": "prompt",
+        "response_schema": SHORT_MODEL_RESPONSE_SCHEMA,
+    }
     assert analysis.summary == "ok"
 
 
@@ -68,10 +74,11 @@ def test_analyzer_can_select_full_prompt(monkeypatch, tmp_path):
 
     class FakeClient:
         def analyze_image(self, **kwargs):
+            seen["response_schema"] = kwargs["response_schema"]
             return '{"summary": "ok"}'
 
     monkeypatch.setattr("image2json.analyzer.load_prompt", fake_load_prompt)
 
     ImageAnalyzer(config=AnalysisConfig(short_version=False), client=FakeClient()).analyze_path(image_path)
 
-    assert seen == {"short_version": False}
+    assert seen == {"short_version": False, "response_schema": MODEL_RESPONSE_SCHEMA}

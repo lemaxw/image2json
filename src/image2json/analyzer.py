@@ -6,6 +6,7 @@ from pathlib import Path
 from PIL import Image
 
 from image2json.config import AnalysisConfig, load_prompt
+from image2json.inference_schema import MODEL_RESPONSE_SCHEMA, SHORT_MODEL_RESPONSE_SCHEMA
 from image2json.json_utils import analysis_from_model_output
 from image2json.models import ImageAnalysis
 from image2json.ollama_client import OllamaVisionClient
@@ -33,6 +34,9 @@ class ImageAnalyzer:
             model=self.config.model,
             temperature=self.config.temperature,
             max_image_side=self.config.max_image_side,
+            response_schema=(
+                SHORT_MODEL_RESPONSE_SCHEMA if self.config.short_version else MODEL_RESPONSE_SCHEMA
+            ),
         )
         return analysis_from_model_output(raw_output, image_metadata=_read_image_metadata(path))
 

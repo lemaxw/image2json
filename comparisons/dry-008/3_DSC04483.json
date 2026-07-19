@@ -1,0 +1,411 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "Clear reflection of the building in the water.",
+        "importance": "high",
+        "label": "modern building reflection",
+        "reason": "Key focal point with strong visual symmetry.",
+        "region": "left"
+      },
+      {
+        "confidence": 0.85,
+        "description": "Reflection of the illuminated walkway in the water.",
+        "importance": "medium",
+        "label": "walkway reflection",
+        "reason": "Supports the symmetrical composition.",
+        "region": "right"
+      }
+    ],
+    "background": [
+      "city lights",
+      "sky"
+    ],
+    "camera_angle": null,
+    "depth": "deep",
+    "edge_content": [
+      "left edge: building",
+      "right edge: walkway"
+    ],
+    "focal_points": [
+      "modern building reflection",
+      "walkway reflection"
+    ],
+    "foreground": [
+      "water surface"
+    ],
+    "layout": "balanced",
+    "midground": [
+      "modern building",
+      "walkway"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "symmetrical with reflections"
+  },
+  "confidence": {
+    "notes": "High confidence in visible elements; no hidden details detected.",
+    "overall": 0.92
+  },
+  "content_complexity": {
+    "dense_details": false,
+    "faces": false,
+    "fine_geometry": false,
+    "hands": false,
+    "level": "medium",
+    "readable_text": true,
+    "repeating_patterns": false
+  },
+  "detailed_description": "A modern rectangular building with illuminated windows sits on the left, its reflection mirrored in a large, still body of water. The horizon shows distant city lights and a clear deep blue sky transitioning from twilight to night. A long, lit walkway extends across the water on the right, with faint reflections visible. The water surface is smooth, indicating minimal wind.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "gentle zoom into reflections"
+    ],
+    "cues": [
+      "calm water surface",
+      "still reflections"
+    ],
+    "level": "low",
+    "motion_risks": [
+      "no motion risks"
+    ],
+    "natural_motion_elements": [
+      "water surface",
+      "reflections",
+      "water",
+      "depth layers"
+    ],
+    "notes": "Water is still, so no motion is visible."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.95,
+      "description": "Cutting the building or walkway would break symmetry.",
+      "severity": "high",
+      "type": "cropping"
+    },
+    {
+      "confidence": 0.95,
+      "description": "No occlusion risk as all elements are visible.",
+      "severity": "low",
+      "type": "occlusion"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.95,
+      "description": "Reflections are still, so no risk.",
+      "severity": "low",
+      "type": "unstable reflections"
+    },
+    {
+      "confidence": 0.95,
+      "description": "No moving elements in terrain.",
+      "severity": "low",
+      "type": "static terrain"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.5,
+    "height": 4000,
+    "orientation": "landscape",
+    "width": 6000
+  },
+  "objects": [
+    {
+      "confidence": 0.95,
+      "description": "Rectangular structure with illuminated windows and dark facade.",
+      "label": "modern building",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Illuminated pedestrian walkway extending across water.",
+      "label": "walkway",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.75,
+      "description": "Distant urban lights along horizon.",
+      "label": "city lights",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "people": [],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "left edge: building",
+      "right edge: walkway"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "left building and reflection",
+      "water surface",
+      "walkway and reflection",
+      "city lights and sky"
+    ],
+    "reason": "Preserving both sides maintains the symmetrical composition and reflections.",
+    "vertical_crop_risk": "high",
+    "wide_composition": true
+  },
+  "scene": {
+    "environment": "urban waterfront",
+    "location_type": "city",
+    "mood": "calm and serene",
+    "time_of_day": "night",
+    "weather": "clear"
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "wind",
+      "birds"
+    ],
+    "confidence": 0.85,
+    "environment_type": "urban waterfront",
+    "primary_audio_prompt": "gentle water lapping",
+    "proximity": "nearby water sounds dominate",
+    "reasoning": "Water is calm, so only subtle sounds are plausible.",
+    "secondary_sounds": [
+      "distant city traffic"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "wide",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.15,
+          "w": 0.33,
+          "x": 0.0,
+          "y": 0.3
+        },
+        "center": {
+          "x": 0.165,
+          "y": 0.375
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "left building and reflection",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.65,
+          "w": 1.0,
+          "x": 0.0,
+          "y": 0.35
+        },
+        "center": {
+          "x": 0.5,
+          "y": 0.675
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "water surface",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.15,
+          "w": 0.45,
+          "x": 0.55,
+          "y": 0.35
+        },
+        "center": {
+          "x": 0.775,
+          "y": 0.425
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "walkway and reflection",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.15,
+          "w": 0.65,
+          "x": 0.35,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.675,
+          "y": 0.075
+        },
+        "edge_margin": "touching_edge",
+        "importance": "background",
+        "label": "city lights and sky",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "deep blue",
+      "dark gray",
+      "white"
+    ],
+    "lighting": "artificial and ambient twilight",
+    "medium": "photographic",
+    "visual_style": "realistic"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "Rectangular structure with illuminated windows and a dark facade, positioned on the left.",
+      "label": "modern building",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "midground",
+        "notes": "Reflects clearly in water.",
+        "occluded": null,
+        "region": "left",
+        "relative_size": "large",
+        "touches_edges": [
+          "left"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.98,
+      "description": "Large, calm body of water reflecting the building and lights.",
+      "label": "water",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.98,
+        "distance_layer": "foreground",
+        "notes": "Smooth surface with clear reflections.",
+        "occluded": null,
+        "region": "center",
+        "relative_size": "very large",
+        "touches_edges": [
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.85,
+      "description": "Long, illuminated pedestrian walkway extending across the water on the right.",
+      "label": "walkway",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": "midground",
+        "notes": "Reflects in water.",
+        "occluded": null,
+        "region": "right",
+        "relative_size": "medium",
+        "touches_edges": [
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.75,
+      "description": "Distant urban lights along the horizon.",
+      "label": "city lights",
+      "prominence": "low",
+      "spatial": {
+        "confidence": 0.75,
+        "distance_layer": "background",
+        "notes": "Visible as scattered points.",
+        "occluded": null,
+        "region": "horizon",
+        "relative_size": "small",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "Nighttime urban waterfront scene with a modern building reflecting in calm water under a deep blue sky.",
+  "text": {
+    "has_visible_text": true,
+    "items": [
+      {
+        "confidence": 0.95,
+        "content": "Maxim Pshater",
+        "location": "bottom left",
+        "spatial": {
+          "confidence": null,
+          "distance_layer": null,
+          "notes": "",
+          "occluded": null,
+          "region": "",
+          "relative_size": null,
+          "touches_edges": [],
+          "x_position": null,
+          "y_position": null
+        }
+      }
+    ],
+    "notes": "Watermark is visible but not part of the scene.",
+    "text_regions": [
+      {
+        "box_normalized": null,
+        "label": "photographer watermark",
+        "location": "bottom left",
+        "preserve_for_reframe": true,
+        "readability": "partial"
+      }
+    ]
+  },
+  "uncertainties": [
+    "text readability",
+    "exact geographic location"
+  ],
+  "validation_warnings": [],
+  "visual_quality": {
+    "artifacts": [
+      "none"
+    ],
+    "confidence": 0.95,
+    "exposure": "balanced",
+    "noise": "low",
+    "overall": "high",
+    "sharpness": "high"
+  }
+}

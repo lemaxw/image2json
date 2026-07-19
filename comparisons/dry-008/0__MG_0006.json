@@ -1,0 +1,365 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "The main columns of the Parthenon are the focal point.",
+        "importance": "high",
+        "label": "Temple columns",
+        "reason": "Central placement and architectural significance.",
+        "region": "center"
+      },
+      {
+        "confidence": 0.85,
+        "description": "Indicates ongoing restoration work.",
+        "importance": "medium",
+        "label": "Scaffolding",
+        "reason": "Visible on the temple's right side.",
+        "region": "right"
+      }
+    ],
+    "background": [
+      "Sky"
+    ],
+    "camera_angle": null,
+    "depth": "Deep",
+    "edge_content": [
+      "Scaffolding on right side"
+    ],
+    "focal_points": [
+      "Temple columns"
+    ],
+    "foreground": [
+      "Rocky terrain"
+    ],
+    "layout": "Symmetrical",
+    "midground": [
+      "Temple structure"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "Balanced"
+  },
+  "confidence": {
+    "notes": "Based on visible evidence in the image.",
+    "overall": 0.9
+  },
+  "content_complexity": {
+    "dense_details": true,
+    "faces": false,
+    "fine_geometry": true,
+    "hands": false,
+    "level": "medium",
+    "readable_text": true,
+    "repeating_patterns": false
+  },
+  "detailed_description": "The image shows the Parthenon, a classical Greek temple, with its iconic columns partially intact, situated on a rocky hilltop. The foreground consists of uneven, light-colored rocks with sparse vegetation. The background features a bright blue sky with scattered white clouds. The temple is positioned centrally, with scaffolding visible on its right side, indicating ongoing restoration work.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "subtle atmospheric motion",
+      "gentle push-in"
+    ],
+    "cues": [
+      "Clouds",
+      "Wind"
+    ],
+    "level": "medium",
+    "motion_risks": [
+      "Unnatural motion in static architecture"
+    ],
+    "natural_motion_elements": [
+      "Clouds",
+      "depth layers",
+      "foliage"
+    ],
+    "notes": "Clouds and foliage suggest potential motion."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.75,
+      "description": "Scaffolding on right edge may be cut if reframed too tightly.",
+      "severity": "low",
+      "type": "Truncation"
+    },
+    {
+      "confidence": 0.8,
+      "description": "Rock formations in foreground may obscure temple details if cropped.",
+      "severity": "medium",
+      "type": "Occlusion"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.6,
+      "description": "Sparse vegetation may appear unstable in motion.",
+      "severity": "low",
+      "type": "Unstable foliage"
+    },
+    {
+      "confidence": 0.75,
+      "description": "Temple columns may appear unnaturally still in motion.",
+      "severity": "medium",
+      "type": "Static architecture"
+    },
+    {
+      "confidence": 0.55,
+      "description": "Scaffolding details may flicker in motion.",
+      "severity": "low",
+      "type": "Fine-detail flicker"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.5,
+    "height": 5000,
+    "orientation": "landscape",
+    "width": 7500
+  },
+  "objects": [
+    {
+      "confidence": 0.85,
+      "description": "Metal structure supporting restoration work on the temple.",
+      "label": "Scaffolding",
+      "location": null,
+      "spatial": {
+        "confidence": 0.85,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "right",
+        "relative_size": "medium",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Uneven rocks in the foreground.",
+      "label": "Rock formations",
+      "location": null,
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "medium",
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "people": [],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "Temple columns",
+      "Rocky terrain",
+      "Sky"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "Temple columns",
+      "Rocky terrain",
+      "Sky"
+    ],
+    "reason": "Important content spans the width of the image.",
+    "vertical_crop_risk": "high",
+    "wide_composition": false
+  },
+  "scene": {
+    "environment": "Historic site",
+    "location_type": "Outdoor",
+    "mood": "Serene",
+    "time_of_day": "Daytime",
+    "weather": "Partly cloudy"
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "Water sounds",
+      "Human voices"
+    ],
+    "confidence": 0.85,
+    "environment_type": "Historic site",
+    "primary_audio_prompt": "Distant wind and faint echoes",
+    "proximity": "Nearby sources dominate",
+    "reasoning": "No visible water or people to suggest sound sources.",
+    "secondary_sounds": [
+      "Distant wind",
+      "Faint echoes"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "wide",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.45,
+          "w": 0.75,
+          "x": 0.08,
+          "y": 0.26
+        },
+        "center": {
+          "x": 0.455,
+          "y": 0.485
+        },
+        "edge_margin": "near_edge",
+        "importance": "primary",
+        "label": "Temple columns",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.35,
+          "w": 0.99,
+          "x": 0.0,
+          "y": 0.65
+        },
+        "center": {
+          "x": 0.495,
+          "y": 0.825
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "Rocky terrain",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.65,
+          "w": 0.99,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.495,
+          "y": 0.325
+        },
+        "edge_margin": "touching_edge",
+        "importance": "background",
+        "label": "Sky",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "Warm earth tones",
+      "Blue sky",
+      "White clouds"
+    ],
+    "lighting": "Natural sunlight with soft shadows",
+    "medium": "Photograph",
+    "visual_style": "Realistic"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "The Parthenon, characterized by its Doric columns and pediment, is the main subject.",
+      "label": "Ancient Greek temple",
+      "prominence": "primary",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "midground",
+        "notes": "Scaffolding on right side indicates restoration work.",
+        "occluded": null,
+        "region": "center",
+        "relative_size": "large",
+        "touches_edges": [
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Uneven, light-colored rocks with sparse vegetation in the foreground.",
+      "label": "Rocky terrain",
+      "prominence": "secondary",
+      "spatial": {
+        "confidence": 0.9,
+        "distance_layer": "foreground",
+        "notes": "Rocks extend across the bottom of the image.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "bottom"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Partly cloudy sky with scattered white clouds and patches of blue.",
+      "label": "Sky",
+      "prominence": "background",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "background",
+        "notes": "Clouds are distributed across the sky.",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "large",
+        "touches_edges": [
+          "top"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "Ancient Greek temple ruins on rocky terrain under a partly cloudy sky.",
+  "text": {
+    "has_visible_text": true,
+    "items": [
+      {
+        "confidence": 0.95,
+        "content": "Maxim Pshater",
+        "location": "bottom left",
+        "spatial": {
+          "confidence": null,
+          "distance_layer": null,
+          "notes": "",
+          "occluded": null,
+          "region": "",
+          "relative_size": null,
+          "touches_edges": [],
+          "x_position": null,
+          "y_position": null
+        }
+      }
+    ],
+    "notes": "Watermark is visible text in the image.",
+    "text_regions": [
+      {
+        "box_normalized": null,
+        "label": "Photographer watermark",
+        "location": "bottom left",
+        "preserve_for_reframe": true,
+        "readability": "readable"
+      }
+    ]
+  },
+  "uncertainties": [
+    "Scaffolding text is unreadable",
+    "Foliage motion is not directly visible"
+  ],
+  "validation_warnings": [],
+  "visual_quality": {
+    "artifacts": [
+      "None"
+    ],
+    "confidence": 0.95,
+    "exposure": "Balanced",
+    "noise": "Low",
+    "overall": "High",
+    "sharpness": "High"
+  }
+}

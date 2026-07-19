@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.0",
+  "image_metadata": {
+    "width": 6000,
+    "height": 4000,
+    "orientation": "landscape",
+    "aspect_ratio": 1.5
+  },
+  "summary": "A low-angle view of old bare tree trunks rising from a wildflower meadow under a cloudy sky.",
+  "detailed_description": "The image shows a large gnarled, leafless tree trunk dominating the left-center foreground, with smaller bare trunks receding through the midground. Dense green grasses and purple and yellow wildflowers fill the lower half of the frame, while a broad overcast sky occupies most of the upper background. A small distant structure is barely visible near the far right edge, but the scene is primarily a quiet open meadow or rural grove.",
+  "subjects": [
+    {
+      "label": "gnarled leafless tree trunk",
+      "description": "A large old, bare, heavily textured tree trunk with thin branches is the dominant subject.",
+      "prominence": "primary",
+      "spatial": {
+        "region": "left-center",
+        "x_position": "left",
+        "y_position": "center",
+        "distance_layer": "foreground",
+        "relative_size": "dominant",
+        "touches_edges": [
+          "top"
+        ],
+        "occluded": false,
+        "notes": "The trunk rises from the meadow and extends into the top edge.",
+        "confidence": 0.94
+      },
+      "confidence": 0.94
+    },
+    {
+      "label": "wildflower meadow",
+      "description": "Green grasses and scattered purple, yellow, and white flowers fill the foreground.",
+      "prominence": "secondary",
+      "spatial": {
+        "region": "bottom",
+        "x_position": "spans-width",
+        "y_position": "bottom",
+        "distance_layer": "foreground",
+        "relative_size": "large",
+        "touches_edges": [
+          "bottom",
+          "left",
+          "right"
+        ],
+        "occluded": false,
+        "notes": "The vegetation forms the local ground-level environment at the camera position.",
+        "confidence": 0.92
+      },
+      "confidence": 0.92
+    },
+    {
+      "label": "cloudy sky",
+      "description": "A pale gray-blue overcast sky fills much of the upper frame.",
+      "prominence": "background",
+      "spatial": {
+        "region": "top and right",
+        "x_position": "spans-width",
+        "y_position": "top",
+        "distance_layer": "background",
+        "relative_size": "large",
+        "touches_edges": [
+          "top",
+          "right",
+          "left"
+        ],
+        "occluded": false,
+        "notes": "Cloud cover is visible behind the trees.",
+        "confidence": 0.88
+      },
+      "confidence": 0.88
+    }
+  ],
+  "scene": {
+    "environment": "open meadow with old trees",
+    "location_type": "rural_open_air",
+    "time_of_day": "daytime",
+    "weather": "cloudy",
+    "mood": "quiet, weathered, contemplative"
+  },
+  "style": {
+    "medium": "photograph",
+    "visual_style": "natural realistic landscape photography",
+    "color_palette": [
+      "green",
+      "dark brown",
+      "gray-blue",
+      "purple",
+      "yellow"
+    ],
+    "lighting": "soft diffuse daylight"
+  },
+  "composition": {
+    "layout": "low-angle landscape composition with a dominant tree on the left and meadow across the bottom",
+    "camera_angle": "low angle from grass level",
+    "depth": "deep",
+    "focal_points": [
+      "gnarled leafless tree trunk",
+      "wildflower meadow",
+      "smaller bare tree trunks"
+    ],
+    "notable_features": [
+      "weathered bark texture",
+      "thin bare branches",
+      "dense foreground flowers",
+      "large cloudy sky",
+      "small distant structure at far right"
+    ],
+    "foreground": [
+      "wild grasses",
+      "purple wildflowers",
+      "yellow wildflowers",
+      "large gnarled tree trunk"
+    ],
+    "midground": [
+      "smaller bare tree trunks",
+      "sloping meadow vegetation"
+    ],
+    "background": [
+      "cloudy sky",
+      "small distant building at far right"
+    ],
+    "negative_space": "open cloudy sky on the upper-right side",
+    "visual_balance": "heavy organic tree mass on the left balanced by open sky and smaller trunks to the right",
+    "edge_content": [
+      "watermark touches bottom-left edge",
+      "main tree branches touch top edge",
+      "meadow vegetation touches bottom edge",
+      "distant structure near right edge"
+    ],
+    "attention_regions": [
+      {
+        "label": "main gnarled tree",
+        "description": "The largest textured trunk and bare branches carry the primary visual interest.",
+        "region": "left-center",
+        "importance": "primary",
+        "reason": "It is the dominant subject and defines the scene.",
+        "confidence": 0.94
+      },
+      {
+        "label": "foreground wildflowers and grasses",
+        "description": "The dense meadow vegetation establishes the camera-level environment.",
+        "region": "bottom half",
+        "importance": "supporting",
+        "reason": "It provides local context and natural texture.",
+        "confidence": 0.9
+      },
+      {
+        "label": "smaller bare trees",
+        "description": "Two smaller bare trunks recede across the center-right midground.",
+        "region": "center-right",
+        "importance": "supporting",
+        "reason": "They extend the grove and depth of the scene.",
+        "confidence": 0.84
+      }
+    ]
+  },
+  "visual_quality": {
+    "overall": "good",
+    "sharpness": "moderate to sharp",
+    "exposure": "balanced",
+    "noise": "low",
+    "artifacts": [],
+    "confidence": 0.86
+  },
+  "text": {
+    "has_visible_text": true,
+    "items": [
+      {
+        "content": "© Maxim Pshater",
+        "location": "bottom-left",
+        "spatial": {
+          "region": "bottom-left",
+          "x_position": "left",
+          "y_position": "bottom",
+          "distance_layer": "foreground",
+          "relative_size": "small",
+          "touches_edges": [
+            "bottom",
+            "left"
+          ],
+          "occluded": false,
+          "notes": "White watermark text overlays the image.",
+          "confidence": 0.96
+        },
+        "confidence": 0.96
+      }
+    ],
+    "text_regions": [
+      {
+        "label": "photographer watermark",
+        "box_normalized": {
+          "x": 0.0,
+          "y": 0.94,
+          "w": 0.17,
+          "h": 0.05
+        },
+        "location": "bottom-left",
+        "readability": "readable",
+        "preserve_for_reframe": false
+      }
+    ],
+    "notes": "A visible photographer watermark appears at the lower-left edge."
+  },
+  "people": [],
+  "objects": [
+    {
+      "label": "large bare tree trunk",
+      "description": "A weathered, hollow-looking tree trunk with many thin bare branches.",
+      "location": "left-center foreground",
+      "spatial": {
+        "region": "left-center",
+        "x_position": "left",
+        "y_position": "center",
+        "distance_layer": "foreground",
+        "relative_size": "dominant",
+        "touches_edges": [
+          "top"
+        ],
+        "occluded": false,
+        "notes": "",
+        "confidence": 0.94
+      },
+      "confidence": 0.94
+    },
+    {
+      "label": "smaller bare tree trunks",
+      "description": "Two smaller, leafless, twisted tree trunks in the meadow.",
+      "location": "center-right midground",
+      "spatial": {
+        "region": "center-right",
+        "x_position": "right",
+        "y_position": "center",
+        "distance_layer": "midground",
+        "relative_size": "medium",
+        "touches_edges": [],
+        "occluded": false,
+        "notes": "",
+        "confidence": 0.86
+      },
+      "confidence": 0.86
+    },
+    {
+      "label": "wildflowers",
+      "description": "Scattered purple, yellow, and white flowers among grasses.",
+      "location": "foreground meadow",
+      "spatial": {
+        "region": "bottom",
+        "x_position": "spans-width",
+        "y_position": "bottom",
+        "distance_layer": "foreground",
+        "relative_size": "large",
+        "touches_edges": [
+          "bottom",
+          "left",
+          "right"
+        ],
+        "occluded": false,
+        "notes": "",
+        "confidence": 0.9
+      },
+      "confidence": 0.9
+    },
+    {
+      "label": "distant structure",
+      "description": "A small building or roofline is barely visible near the far-right horizon.",
+      "location": "far right background",
+      "spatial": {
+        "region": "right",
+        "x_position": "right",
+        "y_position": "center",
+        "distance_layer": "background",
+        "relative_size": "tiny",
+        "touches_edges": [
+          "right"
+        ],
+        "occluded": true,
+        "notes": "Partly hidden by vegetation and the edge of the frame.",
+        "confidence": 0.55
+      },
+      "confidence": 0.55
+    }
+  ],
+  "spatial_map": {
+    "primary_regions": [
+      {
+        "label": "main gnarled tree",
+        "box_normalized": {
+          "x": 0.08,
+          "y": 0.0,
+          "w": 0.48,
+          "h": 0.72
+        },
+        "center": {
+          "x": 0.32,
+          "y": 0.36
+        },
+        "importance": "primary",
+        "edge_margin": "touching_edge",
+        "preserve_for_reframe": true
+      },
+      {
+        "label": "wildflower meadow",
+        "box_normalized": {
+          "x": 0.0,
+          "y": 0.6,
+          "w": 1.0,
+          "h": 0.4
+        },
+        "center": {
+          "x": 0.5,
+          "y": 0.8
+        },
+        "importance": "supporting",
+        "edge_margin": "touching_edge",
+        "preserve_for_reframe": true
+      },
+      {
+        "label": "smaller bare trees",
+        "box_normalized": {
+          "x": 0.55,
+          "y": 0.37,
+          "w": 0.27,
+          "h": 0.32
+        },
+        "center": {
+          "x": 0.685,
+          "y": 0.53
+        },
+        "importance": "supporting",
+        "edge_margin": "safe",
+        "preserve_for_reframe": true
+      }
+    ],
+    "important_regions_span": "wide",
+    "safe_reframe_difficulty": "medium"
+  },
+  "dynamic_potential": {
+    "level": "medium",
+    "cues": [
+      "clouds",
+      "foliage",
+      "wild grasses",
+      "flowers",
+      "depth layers"
+    ],
+    "natural_motion_elements": [
+      "clouds",
+      "foliage",
+      "wild grasses",
+      "flowers",
+      "depth layers"
+    ],
+    "camera_motion_affordances": [
+      "slow low-angle push-in toward the main trunk",
+      "gentle lateral slide through foreground flowers",
+      "subtle upward tilt from meadow to branches"
+    ],
+    "motion_risks": [
+      "fine branch shimmer",
+      "watermark distortion",
+      "dense grass texture flicker"
+    ],
+    "notes": "Wind could move the grasses and flowers while the bare trunks remain still."
+  },
+  "soundscape": {
+    "environment_type": "meadow_open_air",
+    "primary_audio_prompt": "soft breeze through grass, insects buzzing, distant birds under cloudy open sky",
+    "secondary_sounds": [
+      "occasional dry branch creak",
+      "faint rustle of wildflowers"
+    ],
+    "avoid_sounds": [
+      "traffic",
+      "city ambience",
+      "music",
+      "crowd noise",
+      "machinery",
+      "waves",
+      "heavy rain"
+    ],
+    "proximity": "near_meadow_far_structure",
+    "confidence": 0.84,
+    "reasoning": "The camera is low in a meadow near grass and trees; the distant structure should not dominate."
+  },
+  "reframe_constraints": {
+    "must_preserve": [
+      "main gnarled tree",
+      "wildflower meadow",
+      "smaller bare trees"
+    ],
+    "avoid_cutting": [
+      "top branches of main tree",
+      "foreground flowers",
+      "smaller center-right trunks"
+    ],
+    "wide_composition": false,
+    "full_width_important_content": true,
+    "vertical_crop_risk": "medium",
+    "reason": "The main subject is left-weighted, while meadow and supporting trees span much of the width."
+  },
+  "content_complexity": {
+    "level": "medium",
+    "dense_details": true,
+    "faces": false,
+    "hands": false,
+    "readable_text": true,
+    "repeating_patterns": true,
+    "fine_geometry": true
+  },
+  "framing_risks": [
+    {
+      "type": "edge_contact",
+      "description": "The main tree branches reach the top edge and could be clipped in reframing.",
+      "severity": "medium",
+      "confidence": 0.86
+    },
+    {
+      "type": "text_overlay",
+      "description": "The bottom-left watermark may be cut, preserved, or distorted depending on downstream processing.",
+      "severity": "low",
+      "confidence": 0.92
+    },
+    {
+      "type": "small_background_detail",
+      "description": "The distant right-edge structure is tiny and easy to misread or crop out.",
+      "severity": "low",
+      "confidence": 0.55
+    }
+  ],
+  "generation_risks": [
+    {
+      "type": "fine_geometry",
+      "description": "Thin bare branches and dense grasses may shimmer or deform in generated motion.",
+      "severity": "medium",
+      "confidence": 0.86
+    },
+    {
+      "type": "texture_preservation",
+      "description": "The gnarled bark has complex knots and cavities that may be simplified.",
+      "severity": "medium",
+      "confidence": 0.82
+    },
+    {
+      "type": "text_preservation",
+      "description": "The visible watermark may not remain readable after image-to-video generation.",
+      "severity": "medium",
+      "confidence": 0.88
+    }
+  ],
+  "confidence": {
+    "overall": 0.88,
+    "notes": "Main natural elements are clear; the far-right structure is uncertain and not central."
+  },
+  "uncertainties": [
+    "Exact species or condition of the trees is unknown.",
+    "The small far-right background structure is partially obscured and uncertain.",
+    "Wind strength and bird presence are inferred from the meadow setting, not directly visible."
+  ],
+  "raw_model_output": null,
+  "validation_warnings": []
+}

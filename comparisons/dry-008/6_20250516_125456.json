@@ -1,0 +1,571 @@
+{
+  "composition": {
+    "attention_regions": [
+      {
+        "confidence": 0.95,
+        "description": "Building with extensive graffiti and street art, featuring a red-tiled roof and vibrant murals.",
+        "importance": "high",
+        "label": "colorful graffiti building",
+        "reason": "Central visual element with high detail and color contrast.",
+        "region": "midground"
+      },
+      {
+        "confidence": 0.95,
+        "description": "Red scooter with two riders wearing helmets, positioned in the foreground.",
+        "importance": "high",
+        "label": "red scooter",
+        "reason": "Dynamic element with clear motion direction.",
+        "region": "foreground"
+      },
+      {
+        "confidence": 0.95,
+        "description": "Green tree with dense foliage, partially shading the building.",
+        "importance": "medium",
+        "label": "tree",
+        "reason": "Provides natural contrast and shade.",
+        "region": "midground"
+      },
+      {
+        "confidence": 0.95,
+        "description": "Silver SUV parked on the left side of the street.",
+        "importance": "medium",
+        "label": "silver SUV",
+        "reason": "Stationary vehicle adds context to the street scene.",
+        "region": "foreground"
+      },
+      {
+        "confidence": 0.95,
+        "description": "Tall residential building in the background on the right.",
+        "importance": "low",
+        "label": "tall building",
+        "reason": "Provides context for the urban setting.",
+        "region": "background"
+      }
+    ],
+    "background": [
+      "tall building",
+      "utility poles"
+    ],
+    "camera_angle": null,
+    "depth": "shallow",
+    "edge_content": [
+      "tree on left",
+      "tall building on right"
+    ],
+    "focal_points": [
+      "colorful graffiti building",
+      "red scooter"
+    ],
+    "foreground": [
+      "red scooter",
+      "silver SUV"
+    ],
+    "layout": "balanced",
+    "midground": [
+      "colorful graffiti building",
+      "tree"
+    ],
+    "negative_space": "",
+    "notable_features": [],
+    "visual_balance": "symmetrical"
+  },
+  "confidence": {
+    "notes": "High confidence in visual elements and their descriptions based on visible evidence.",
+    "overall": 0.95
+  },
+  "content_complexity": {
+    "dense_details": true,
+    "faces": true,
+    "fine_geometry": true,
+    "hands": true,
+    "level": "medium",
+    "readable_text": true,
+    "repeating_patterns": true
+  },
+  "detailed_description": "A bright, sunny day features a street with a building covered in colorful graffiti and street art. Two people on a red scooter are positioned in the foreground, moving from left to right. A silver SUV is parked on the left side of the street, and another car is visible further back. The building has a red-tiled roof and vibrant murals, with a tree providing shade on the left. The background includes a tall building and utility poles with wires.",
+  "dynamic_potential": {
+    "camera_motion_affordances": [
+      "gentle push into the street scene"
+    ],
+    "cues": [
+      "scooter movement",
+      "foliage movement"
+    ],
+    "level": "medium",
+    "motion_risks": [
+      "unstable foliage",
+      "changing faces"
+    ],
+    "natural_motion_elements": [
+      "scooter",
+      "foliage",
+      "vehicles",
+      "depth layers"
+    ],
+    "notes": "Scooter movement is visible, and foliage shows slight motion due to wind."
+  },
+  "framing_risks": [
+    {
+      "confidence": 0.8,
+      "description": "Cutting off the top of the graffiti building",
+      "severity": "medium",
+      "type": "cropping"
+    },
+    {
+      "confidence": 0.7,
+      "description": "Scooter riders partially obscured by the scooter",
+      "severity": "low",
+      "type": "occlusion"
+    },
+    {
+      "confidence": 0.6,
+      "description": "Tree branches cut off at the top",
+      "severity": "low",
+      "type": "truncation"
+    }
+  ],
+  "generation_risks": [
+    {
+      "confidence": 0.8,
+      "description": "Foliage on the tree may appear to move unnaturally in video",
+      "severity": "medium",
+      "type": "unstable foliage"
+    },
+    {
+      "confidence": 0.7,
+      "description": "Riders' faces may shift due to motion",
+      "severity": "low",
+      "type": "changing faces"
+    },
+    {
+      "confidence": 0.6,
+      "description": "Graffiti details may flicker in video",
+      "severity": "low",
+      "type": "fine-detail flicker"
+    }
+  ],
+  "image_metadata": {
+    "aspect_ratio": 1.3333,
+    "height": 3060,
+    "orientation": "landscape",
+    "width": 4080
+  },
+  "objects": [
+    {
+      "confidence": 0.95,
+      "description": "Silver SUV parked on the left side of the street.",
+      "label": "silver SUV",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Red scooter with two riders wearing helmets, positioned in the foreground.",
+      "label": "red scooter",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Poles with wires, visible on the right side of the image.",
+      "label": "utility poles",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.9,
+      "description": "Blue and red street signs visible on the left and right sides.",
+      "label": "street signs",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Tall residential building in the background on the right.",
+      "label": "tall building",
+      "location": null,
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "people": [
+    {
+      "apparent_activity": null,
+      "confidence": 0.9,
+      "count": null,
+      "description": "Person wearing a white helmet and pink shirt, seated on the scooter.",
+      "label": "scooter rider 1",
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      },
+      "visible_attributes": []
+    },
+    {
+      "apparent_activity": null,
+      "confidence": 0.9,
+      "count": null,
+      "description": "Person wearing a silver helmet and green shirt, seated on the scooter.",
+      "label": "scooter rider 2",
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      },
+      "visible_attributes": []
+    },
+    {
+      "apparent_activity": null,
+      "confidence": 0.85,
+      "count": null,
+      "description": "Person walking near the building entrance.",
+      "label": "pedestrian",
+      "spatial": {
+        "confidence": null,
+        "distance_layer": null,
+        "notes": "",
+        "occluded": null,
+        "region": "",
+        "relative_size": null,
+        "touches_edges": [],
+        "x_position": null,
+        "y_position": null
+      },
+      "visible_attributes": []
+    }
+  ],
+  "raw_model_output": null,
+  "reframe_constraints": {
+    "avoid_cutting": [
+      "scooter riders",
+      "building entrance"
+    ],
+    "full_width_important_content": true,
+    "must_preserve": [
+      "colorful graffiti building",
+      "red scooter",
+      "tree"
+    ],
+    "reason": "The graffiti building spans the width of the image, and the scooter is positioned centrally.",
+    "vertical_crop_risk": "high",
+    "wide_composition": false
+  },
+  "scene": {
+    "environment": "urban street",
+    "location_type": "city",
+    "mood": "vibrant",
+    "time_of_day": "day",
+    "weather": "clear"
+  },
+  "schema_version": "1.0",
+  "soundscape": {
+    "avoid_sounds": [
+      "bird calls",
+      "construction noise"
+    ],
+    "confidence": 0.95,
+    "environment_type": "urban street",
+    "primary_audio_prompt": "scooter engine, distant traffic",
+    "proximity": "nearby sources dominate",
+    "reasoning": "Scooter engine and traffic are the most prominent sounds in the scene.",
+    "secondary_sounds": [
+      "street noise",
+      "pedestrian footsteps"
+    ]
+  },
+  "spatial_map": {
+    "important_regions_span": "wide",
+    "primary_regions": [
+      {
+        "box_normalized": {
+          "h": 0.45,
+          "w": 0.85,
+          "x": 0.0,
+          "y": 0.31
+        },
+        "center": {
+          "x": 0.425,
+          "y": 0.535
+        },
+        "edge_margin": "touching_edge",
+        "importance": "primary",
+        "label": "colorful graffiti building",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.25,
+          "w": 0.25,
+          "x": 0.55,
+          "y": 0.6
+        },
+        "center": {
+          "x": 0.675,
+          "y": 0.725
+        },
+        "edge_margin": "near_edge",
+        "importance": "primary",
+        "label": "red scooter",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.35,
+          "w": 0.5,
+          "x": 0.0,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.25,
+          "y": 0.175
+        },
+        "edge_margin": "touching_edge",
+        "importance": "supporting",
+        "label": "tree",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.25,
+          "w": 0.29,
+          "x": 0.0,
+          "y": 0.52
+        },
+        "center": {
+          "x": 0.145,
+          "y": 0.645
+        },
+        "edge_margin": "touching_edge",
+        "importance": "supporting",
+        "label": "silver SUV",
+        "preserve_for_reframe": true
+      },
+      {
+        "box_normalized": {
+          "h": 0.5,
+          "w": 0.1,
+          "x": 0.89,
+          "y": 0.0
+        },
+        "center": {
+          "x": 0.94,
+          "y": 0.25
+        },
+        "edge_margin": "touching_edge",
+        "importance": "background",
+        "label": "tall building",
+        "preserve_for_reframe": true
+      }
+    ],
+    "safe_reframe_difficulty": "high"
+  },
+  "style": {
+    "color_palette": [
+      "blue",
+      "red",
+      "green",
+      "yellow"
+    ],
+    "lighting": "bright sunlight",
+    "medium": "photorealistic",
+    "visual_style": "bright and colorful"
+  },
+  "subjects": [
+    {
+      "confidence": 0.95,
+      "description": "Building with extensive graffiti and street art, featuring a red-tiled roof and vibrant murals.",
+      "label": "colorful graffiti building",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "mid",
+        "notes": "Building spans the width of the image, with graffiti covering most visible surfaces.",
+        "occluded": null,
+        "region": "midground",
+        "relative_size": "large",
+        "touches_edges": [
+          "left",
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Red scooter with two riders wearing helmets, positioned in the foreground.",
+      "label": "red scooter",
+      "prominence": "high",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "near",
+        "notes": "Scooter is moving from left to right, with riders seated on it.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Silver SUV parked on the left side of the street.",
+      "label": "silver SUV",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "near",
+        "notes": "Vehicle is stationary, positioned near the building.",
+        "occluded": null,
+        "region": "foreground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "left"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Green tree with dense foliage, partially shading the building.",
+      "label": "tree",
+      "prominence": "medium",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "mid",
+        "notes": "Tree is positioned above the building, providing shade.",
+        "occluded": null,
+        "region": "midground",
+        "relative_size": "medium",
+        "touches_edges": [
+          "left"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    },
+    {
+      "confidence": 0.95,
+      "description": "Tall residential building in the background on the right.",
+      "label": "tall building",
+      "prominence": "low",
+      "spatial": {
+        "confidence": 0.95,
+        "distance_layer": "far",
+        "notes": "Building is visible behind the street scene.",
+        "occluded": null,
+        "region": "background",
+        "relative_size": "small",
+        "touches_edges": [
+          "right"
+        ],
+        "x_position": null,
+        "y_position": null
+      }
+    }
+  ],
+  "summary": "Vibrant street scene with a colorful graffiti-covered building, a red scooter with two riders, and parked cars under a clear blue sky.",
+  "text": {
+    "has_visible_text": true,
+    "items": [],
+    "notes": "Text is visible but not fully legible; graffiti text is partially obscured by the roof.",
+    "text_regions": [
+      {
+        "box_normalized": null,
+        "label": "visible labels on photos",
+        "location": "Text is visible but not fully legible; graffiti text is partially obscured by the roof.",
+        "preserve_for_reframe": true,
+        "readability": "partial"
+      }
+    ]
+  },
+  "uncertainties": [
+    "text readability",
+    "exact geographic location",
+    "weather conditions"
+  ],
+  "validation_warnings": [
+    {
+      "code": "missing_text_items",
+      "field": "text.items",
+      "message": "Visible text was reported but no text items were provided.",
+      "severity": "warning"
+    }
+  ],
+  "visual_quality": {
+    "artifacts": [
+      "none"
+    ],
+    "confidence": 0.95,
+    "exposure": "well-exposed",
+    "noise": "low",
+    "overall": "high",
+    "sharpness": "high"
+  }
+}
